@@ -121,6 +121,18 @@ This API is ready for deployment on Railway. The project includes proper configu
 - **Swagger-jsdoc** - OpenAPI specification generator
 - **Swagger-ui-express** - Interactive API documentation
 
+## Dependencies
+
+### Production Dependencies
+- **axios** (^1.6.0) - HTTP client for making API requests
+- **dotenv** (^17.2.3) - Environment variable loader
+- **express** (^4.18.2) - Web application framework
+- **swagger-jsdoc** (^6.2.8) - OpenAPI specification generator from JSDoc comments
+- **swagger-ui-express** (^5.0.0) - Swagger UI middleware for Express
+
+### Development Dependencies
+- **nodemon** (^3.0.1) - Development server with auto-restart on file changes
+
 ## Notes
 
 - User details are stored in-memory (reset when server restarts)

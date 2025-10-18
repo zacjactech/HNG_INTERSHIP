@@ -1,7 +1,7 @@
 # HNG_INTERNSHIP 🎯
 
 This repository contains all project files and resources developed during the **HNG Internship**.  
-It includes backend, frontend, and mobile application components — organized in a single, maintainable structure.
+The project is organized in stages, with each stage containing specific components and implementations.
 
 ---
 
@@ -9,25 +9,45 @@ It includes backend, frontend, and mobile application components — organized i
 
 | Folder | Description |
 |--------|--------------|
-| `backend/` | Contains the server-side logic and API implementations. |
-| `frontend/` | Contains the web application interface and related assets. |
-| `mobile/` | Contains the mobile application codebase. |
-| `docs/` | Documentation, setup guides, and project notes. |
+| `Stage Zero/` | Initial stage containing backend setup and basic API implementation |
+| `Stage Zero/Backend/` | Server-side logic and API implementations for Stage Zero |
 
 ---
 
 ## 🧠 Objective
 
 The goal of this repository is to:
-- Develop and manage multiple software components under one workspace.  
-- Practice version control, documentation, and team collaboration.  
-- Demonstrate structured project organization suitable for production environments.  
+- Track progress through different stages of the HNG Internship  
+- Develop and manage software components in an organized manner  
+- Practice version control, documentation, and team collaboration  
+- Demonstrate structured project organization suitable for production environments  
 
 ---
 
 ## 🚀 Getting Started
 
 ### Clone the Repository
+```bash
+git clone https://github.com/zacjactech/HNG_INTERSHIP.git
+cd HNG_INTERSHIP
+```
+
+### Navigate to Stage Zero Backend
+```bash
+cd "Stage Zero/Backend"
+```
+
+### Read the README.md for Instructions
+Before proceeding, read the README.md file in the Stage Zero Backend folder for specific setup instructions and project details.
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Start the Server
+```bash
+npm start
 ```bash
 git clone https://github.com/zacjactech/HNG_INTERSHIP.git
 cd HNG_INTERNSHIP
