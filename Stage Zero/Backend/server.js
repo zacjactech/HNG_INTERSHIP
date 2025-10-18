@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const axios = require('axios');
 const swaggerJsdoc = require('swagger-jsdoc');
@@ -8,9 +9,9 @@ const PORT = process.env.PORT || 3000;
 
 // In-memory storage for user details (in production, use a database)
 let userDetails = {
-  email: 'your_email@example.com',
-  name: 'Your Full Name',
-  stack: 'Node.js/Express'
+  email: process.env.DEFAULT_EMAIL || 'your_email@example.com',
+  name: process.env.DEFAULT_NAME || 'Your Full Name',
+  stack: process.env.DEFAULT_STACK || 'Node.js/Express'
 };
 
 // Middleware to parse JSON bodies
@@ -213,7 +214,7 @@ app.get('/me', async (req, res) => {
     let catFact = 'Could not fetch cat fact right now.';
     
     try {
-      const response = await axios.get('https://catfact.ninja/fact');
+      const response = await axios.get(process.env.CAT_FACT_API_URL || 'https://catfact.ninja/fact');
       if (response.data && response.data.fact) {
         catFact = response.data.fact;
       }

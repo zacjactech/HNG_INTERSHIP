@@ -18,9 +18,9 @@ A Node.js/Express.js API that returns user profile information and a random cat 
 {
   "status": "success",
   "user": {
-    "email": "your_email@example.com",
-    "name": "Your Full Name",
-    "stack": "Node.js/Express"
+    "email": "your_email@example.com",  // From DEFAULT_EMAIL env var
+    "name": "Your Full Name",           // From DEFAULT_NAME env var
+    "stack": "Node.js/Express"        // From DEFAULT_STACK env var
   },
   "timestamp": "2025-10-18T10:40:35.453Z",
   "fact": "In multi-cat households, cats of the opposite sex usually get along better."
@@ -33,6 +33,31 @@ A Node.js/Express.js API that returns user profile information and a random cat 
 - Node.js (v16.0.0 or higher)
 - pnpm package manager
 
+### Environment Variables
+
+Create a `.env` file in the root directory with the following variables:
+
+```bash
+# Server Configuration
+PORT=3000
+
+# Default User Details
+DEFAULT_EMAIL=your_email@example.com
+DEFAULT_NAME=Your Full Name
+DEFAULT_STACK=Node.js/Express
+
+# API Configuration
+CAT_FACT_API_URL=https://catfact.ninja/fact
+
+# Environment
+NODE_ENV=development
+```
+
+You can copy the `.env.example` file and modify the values:
+```bash
+cp .env.example .env
+```
+
 ### Installation
 
 1. Clone the repository or navigate to the project directory
@@ -41,12 +66,14 @@ A Node.js/Express.js API that returns user profile information and a random cat 
    pnpm install
    ```
 
-3. Start the server:
+3. Create and configure your `.env` file (see Environment Variables section above)
+
+4. Start the server:
    ```bash
    pnpm start
    ```
 
-4. The server will start on port 3000 (or the port specified in the PORT environment variable)
+5. The server will start on port 3000 (or the port specified in the PORT environment variable)
 
 ## API Endpoints
 
@@ -98,4 +125,6 @@ This API is ready for deployment on Railway. The project includes proper configu
 
 - User details are stored in-memory (reset when server restarts)
 - In production, consider using a database for persistent storage
-- Default user details are provided if no POST request is made
+- Default user details are provided by environment variables if no POST request is made
+- Environment variables allow for easy configuration without code changes
+- The `.env` file should never be committed to version control (already in .gitignore)
